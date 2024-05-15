@@ -3,13 +3,6 @@ from fastapi import FastAPI, HTTPException
 from datetime import datetime, timedelta
 import pandas as pd
 
-with open("CROP PREDICTION.txt" , 'r') as txt_file:
-    lines = txt_file.readlines()
-with open('output.csv', 'w', newline= '') as csv_file:
-    writer = csv.writer(csv_file)
-for line in lines:
-    writer.writerow([line.strip()])
-    
 app = FastAPI()
 df = pd.read_csv("output.csv")
 
